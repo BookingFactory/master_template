@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    {% for offer in website_data.special_offers %}
+      <div class="col-md-6">
+        <div class="offer-image">
+          <img src="{{offer.image | attachment_url: 'public' }}" />
+        </div>
+        <div class="offer-title">{{offer.title}}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<section id="main-block">
+  {% include 'main_block' %}
+</section>
+<section id="membership">
+  {% include 'membership' %}
+</section>
+<section id="information">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        {{website_data.text_area}}
+      </div>
+      <div class="col-md-7">
+        {% include 'rooms' %}
+      </div>
+    </div>
+  </div>
+</section>
+<section id="features">
+  {% include 'features' %}
+</section>
+<section id="faq">
+  {% include 'questions' %}
+</section>
+<section id="testimonials">
+  {% include 'testimonials' %}
+</section>
+<section id="blog">
+  {% include 'blog' %}
+</section>
+<section id="map">
+  {% include 'map' %}
+</section>
+<section id="contact">
+  {% include 'contact' %}
+</section>

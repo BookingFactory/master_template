@@ -1,0 +1,22 @@
+<div class="features" style="background-image: url({{website_data.features_background_image | attachment_url: 'blured'}})">
+  <div class="background">
+    <div class="container">
+      <div class="tripadvisor">
+        {{website_data.tripadvisor_code}}
+      </div>
+      <div class="feature-list">
+        <h2>
+          {{website_data.features_title}}
+        </h2>
+        {% for feature in website_data.features %}
+          <div class="feature">
+            <i class="fa fa-{{feature.icon}}"> </i>
+            <strong>{{feature.title}}</strong>
+            <br />
+            {{feature.description}}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

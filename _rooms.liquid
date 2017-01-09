@@ -1,0 +1,48 @@
+<div class="row">
+  {% for room in website_data.rooms %}
+    {% if room.visible == true and room.room_type.photos.size > 0 %}
+      <a href="{{ room.slug | link_to: website_data.link_object }}" class="col-md-6">
+        <div class="number">
+          <div class="image">
+            <img src="{{room.room_type.photos.first.image | attachment_url: 'public'}}" />
+          </div>
+          <div class="info">
+            <div class="text">
+              <span>
+                {{ room.name }}
+              </span>
+              <br />
+              <span class="btn btn-primary">View Room</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+  {% for room in website_data.custom_rooms %}
+    {% if room.visible == true and room.website_custom_room_photos.size > 0 %}
+      <a href="{{ room.slug | link_to: website_data.link_object }}" class="col-md-6">
+        <div class="number custom">
+          <div class="image">
+            <img src="{{room.website_custom_room_photos.first.image | attachment_url: 'public'}}" />
+          </div>
+          <div class="info">
+            <div class="text">
+              <span>
+                {{ room.title }}
+              </span>
+              <br />
+              {% unless room.button_text == nil or room.button_text == '' %}
+                <span class="btn btn-primary">
+                  {{ room.button_text }}
+                </span>
+              {% else %}
+                <span class="btn btn-primary">View Room</span>
+              {% endunless %}
+            </div>
+          </div>
+        </div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

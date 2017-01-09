@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    {% for testimonial in website_data.testimonials %}
+      <div class="col-md-12">
+        <h5>
+          {{testimonial.title}}
+        </h5>
+        <p>
+          {{testimonial.body}}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
